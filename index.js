@@ -1,38 +1,37 @@
-// Write your solution in this file!
+const drivers = ["Milo",'Otis','Garfield']
 
-let driver = {}
-
-function updateDriverWithKeyAndValue(driver, key, value) {
-  
- let newDriver = {...driver}
-  
-  newDriver[key] = value;
-  
-  return newDriver 
+function destructivelyAppendDriver(name) {
+  drivers.push(name);
 }
 
-function destructivelyUpdateDriverWithKeyAndValue(driver, key, value) {
-  
-  driver[key] = value
-  
-  return driver
-
+function destructivelyPrependDriver(name) {
+  drivers.unshift(name);
 }
 
-function deleteFromDriverByKey(driver, key) {
-  
- let newDriver = {...driver}
-  
-  delete newDriver[key];
-  
-  return newDriver 
-
+function destructivelyRemoveLastDriver() {
+  drivers.pop()
 }
 
-function destructivelyDeleteFromDriverByKey(driver, key) {
+function destructivelyRemoveFirstDriver() { 
+ drivers.shift()
+}
 
-  delete driver[key]
-  
-  return driver
+function appendDriver (name) {
+  let newArr = drivers.concat(name)
+  return newArr
+}
 
+function prependDriver (name) {
+  let newArr = [name,...drivers]
+  return newArr
+}
+
+function removeFirstDriver () {
+  let newArr = drivers.slice(1,drivers.length)
+  return newArr
+}
+
+function removeLastDriver () {
+  let newArr = drivers.slice(0,drivers.length - 1)
+  return newArr
 }
